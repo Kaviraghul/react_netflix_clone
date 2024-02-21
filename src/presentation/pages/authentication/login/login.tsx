@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import BackgroundImage from "../../../components/backgroundImage/background_image";
-import Navbar from "../../../components/navbar/navbar";
+import { BackgroundImage, Navbar } from "../../../components/components_export";
 import { useState } from "react";
 
 export default function LoginScreen() {
@@ -12,7 +11,7 @@ export default function LoginScreen() {
 
   const handleSignIn = async () => {
     console.log(formValue);
-  }
+  };
 
   return (
     <Container showPassword={showPassword}>
@@ -45,10 +44,7 @@ export default function LoginScreen() {
                 name="password"
                 value={formValue.password}
                 onChange={(e) =>
-                  setFormValue({
-                    ...formValue,
-                    [e.target.name]: e.target.value,
-                  })
+                    setFormValue({ ...formValue, [e.target.name]: e.target.value })
                 }
               />
             )}
@@ -56,7 +52,7 @@ export default function LoginScreen() {
               <button onClick={() => setShowPassword(true)}>Get Started</button>
             )}
           </div>
-          <button onClick={handleSignIn} >Sign up</button>
+          <button onClick={handleSignIn}>Sign up</button>
         </div>
       </div>
     </Container>
